@@ -1,0 +1,2 @@
+defmodule Clock do
+end

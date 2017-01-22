@@ -1,0 +1,2 @@
+defmodule Hue do
+end
