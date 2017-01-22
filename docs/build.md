@@ -12,3 +12,16 @@
 - 1x 360º rotary encoder switch (eg. [from Amazon, with spares](https://www.amazon.co.uk/gp/product/B0197X1UZY/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1))
 - 1x Passive PoE injector/splitter kit (eg. [from Amazon, with spares](https://www.amazon.co.uk/gp/product/B01M4GJGI8/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1))
 - Female-Female Dupont wires, for joining components (eg. [from Amazon](https://www.amazon.co.uk/gp/product/B01EV70C78/ref=oh_aui_detailpage_o01_s01?ie=UTF8&psc=1))
+
+
+## Manufacture
+
+We've used a small piece of stripboard to join various parts of the system together, particularly the power rails:
+
+![Stripboard design](designs/stripboard.png)
+
+The 12V supply arriving over passive PoE is used to power the Nixie power module and, via the DC/DC converter, the Raspberry Pi. The ground rails for each part are kept separate to prevent fluctuations from affecting the operation of the Raspberry Pi.
+
+The HV power lines from the Nixie power module are connected directly to the Nixie Driver (see [page 5 of the spec](hardware/ogilumen/nxie driver board.pdf) for pins).
+
+The GPIO pins have been chosen broadly at random, feel free to move them if you change the appropriate parts of the code.
